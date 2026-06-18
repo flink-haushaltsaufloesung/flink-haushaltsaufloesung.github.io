@@ -138,10 +138,54 @@
       color: #4B5563;
     }
 
-    /* Kontakt */
-    #kontakt p {
+    /* Kontaktformular */
+    .contact-form {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+      background: #FFFFFF;
+      padding: 25px;
+      border-radius: 16px;
+      box-shadow: 0 6px 18px rgba(0,0,0,0.06);
+    }
+
+    .contact-form label {
+      font-weight: bold;
+      color: #111827;
+    }
+
+    .contact-form input,
+    .contact-form textarea {
+      padding: 12px;
+      border: 1px solid #D1D5DB;
+      border-radius: 10px;
       font-size: 16px;
-      line-height: 1.6;
+      width: 100%;
+      box-sizing: border-box;
+    }
+
+    .contact-form input:focus,
+    .contact-form textarea:focus {
+      border-color: #F97316;
+      outline: none;
+      box-shadow: 0 0 0 3px rgba(249,115,22,0.2);
+    }
+
+    .form-button {
+      background: #F97316;
+      color: white;
+      padding: 14px;
+      border: none;
+      border-radius: 10px;
+      font-size: 18px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: 0.2s ease;
+    }
+
+    .form-button:hover {
+      background: #EA580C;
+      transform: translateY(-2px);
     }
 
     /* WhatsApp Button + Textblase */
@@ -190,6 +234,44 @@
       20% { opacity: 1; transform: translateY(0); }
       80% { opacity: 1; }
       100% { opacity: 0; transform: translateY(5px); }
+    }
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
+
+      .nav-links {
+        display: none;
+      }
+
+      header {
+        padding: 40px 20px 60px;
+      }
+
+      h1 {
+        font-size: 32px;
+      }
+
+      .logo {
+        width: 150px;
+      }
+
+      section {
+        padding: 40px 15px;
+      }
+
+      .service {
+        padding: 18px;
+      }
+
+      .whatsapp-wrapper {
+        bottom: 15px;
+        right: 15px;
+      }
+
+      .whatsapp-bubble {
+        font-size: 12px;
+        padding: 10px 14px;
+      }
     }
 
     /* Footer */
@@ -247,13 +329,22 @@
   </div>
 </section>
 
-<!-- Kontakt -->
+<!-- Kontaktformular -->
 <section id="kontakt">
   <h2>Kontakt</h2>
-  <p>
-    Telefon: 0157 88 007 007<br><br>
-    E-Mail: info@flinkhaushaltsaufloesung.de
-  </p>
+
+  <form class="contact-form" action="https://formspree.io/f/mnnqzjvd" method="POST">
+    <label>Name</label>
+    <input type="text" name="name" required>
+
+    <label>E-Mail</label>
+    <input type="email" name="email" required>
+
+    <label>Nachricht</label>
+    <textarea name="message" rows="5" required></textarea>
+
+    <button type="submit" class="form-button">Nachricht senden</button>
+  </form>
 </section>
 
 <!-- Impressum -->
