@@ -98,42 +98,103 @@
       box-shadow: 0 14px 30px rgba(0, 0, 0, 0.18);
     }
 
-    /* Sections */
-    section {
-      padding: 60px 20px;
-      max-width: 1000px;
-      margin: auto;
-    }
-
-    h2 {
-      font-size: 28px;
-      margin-bottom: 25px;
-      color: #111827;
-    }
-
-    /* Services */
-    .service {
-      background: #FFFFFF;
-      padding: 20px 24px;
-      margin-bottom: 20px;
+    /* Service Cards */
+    .service-card {
+      display: flex;
+      gap: 20px;
+      background: #fff;
+      padding: 20px;
       border-radius: 16px;
-      box-shadow: 0 6px 18px rgba(15, 23, 42, 0.06);
-      border-left: 4px solid #F97316;
+      box-shadow: 0 6px 18px rgba(0,0,0,0.06);
+      margin-bottom: 25px;
+      align-items: center;
     }
 
-    .service h3 {
-      margin-top: 0;
-      margin-bottom: 8px;
+    .service-card img {
+      width: 140px;
+      height: 140px;
+      object-fit: cover;
+      border-radius: 12px;
+    }
+
+    .service-card h3 {
+      margin: 0 0 8px;
       font-size: 20px;
-      color: #111827;
     }
 
-    .service p {
+    .service-card p {
       margin: 0;
       color: #4B5563;
     }
 
-    /* WhatsApp Button + Textblase */
+    /* FAQ */
+    .faq-container {
+      max-width: 900px;
+      margin: auto;
+    }
+
+    .faq-item {
+      background: #fff;
+      margin-bottom: 15px;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+      overflow: hidden;
+    }
+
+    .faq-question {
+      padding: 18px 20px;
+      font-size: 18px;
+      font-weight: bold;
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      color: #111827;
+    }
+
+    .faq-question:hover {
+      background: #F97316;
+      color: #fff;
+    }
+
+    .faq-answer {
+      padding: 0 20px 20px;
+      display: none;
+      color: #4B5563;
+    }
+
+    .faq-arrow {
+      transition: transform 0.3s ease;
+    }
+
+    .faq-item.active .faq-answer {
+      display: block;
+    }
+
+    .faq-item.active .faq-arrow {
+      transform: rotate(90deg);
+    }
+
+    /* Footer */
+    footer {
+      background: #111827;
+      color: white;
+      text-align: center;
+      padding: 25px;
+      font-size: 14px;
+    }
+
+    footer a {
+      color: #F97316;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    footer a:hover {
+      text-decoration: underline;
+    }
+
+    /* WhatsApp Button */
     .whatsapp-wrapper {
       position: fixed;
       bottom: 25px;
@@ -159,57 +220,6 @@
       box-shadow: 0 12px 28px rgba(0,0,0,0.22);
     }
 
-    .whatsapp-bubble {
-      position: absolute;
-      right: 0;
-      bottom: 70px;
-      background: #FFFFFF;
-      color: #111827;
-      padding: 12px 18px;
-      border-radius: 12px;
-      box-shadow: 0 6px 18px rgba(0,0,0,0.12);
-      font-size: 14px;
-      font-weight: bold;
-      white-space: nowrap;
-      animation: bubbleFade 3s infinite ease-in-out;
-    }
-
-    @keyframes bubbleFade {
-      0% { opacity: 0; transform: translateY(5px); }
-      20% { opacity: 1; transform: translateY(0); }
-      80% { opacity: 1; }
-      100% { opacity: 0; transform: translateY(5px); }
-    }
-
-    /* Footer */
-    footer {
-      background: #111827;
-      color: white;
-      text-align: center;
-      padding: 25px;
-      font-size: 14px;
-    }
-
-    footer a {
-      color: #F97316;
-      text-decoration: none;
-      font-weight: bold;
-    }
-
-    footer a:hover {
-      text-decoration: underline;
-    }
-
-    /* Responsive */
-    @media (max-width: 768px) {
-      .nav-links { display: none; }
-      header { padding: 40px 20px 60px; }
-      h1 { font-size: 32px; }
-      section { padding: 40px 15px; }
-      .service { padding: 18px; }
-      .whatsapp-wrapper { bottom: 15px; right: 15px; }
-      .whatsapp-bubble { font-size: 12px; padding: 10px 14px; }
-    }
   </style>
 </head>
 
@@ -238,19 +248,110 @@
 <section>
   <h2>Unsere Leistungen</h2>
 
-  <div class="service">
-    <h3>Haushaltsauflösungen</h3>
-    <p>Schnell, zuverlässig und besenrein.</p>
+  <div class="service-card">
+    <img src="haushaltauflosung.png" alt="Haushaltsauflösung">
+    <div>
+      <h3>Haushaltsauflösungen</h3>
+      <p>Schnelle, professionelle und besenreine Haushaltsauflösungen in jeder Größe.</p>
+    </div>
   </div>
 
-  <div class="service">
-    <h3>Entrümpelungen</h3>
-    <p>Keller, Dachboden, Garage und komplette Wohnungen.</p>
+  <div class="service-card">
+    <img src="entrümpelung.png" alt="Entrümpelung">
+    <div>
+      <h3>Entrümpelungen</h3>
+      <p>Keller, Dachboden, Garage oder komplette Wohnungen – wir räumen alles.</p>
+    </div>
   </div>
 
-  <div class="service">
-    <h3>Kostenlose Besichtigung</h3>
-    <p>Unverbindliche Beratung und faire Preise.</p>
+  <div class="service-card">
+    <img src="betriebsauflosung.png" alt="Betriebsauflösung">
+    <div>
+      <h3>Betriebsauflösungen</h3>
+      <p>Auflösung von Büros, Werkstätten, Lagern und Gewerbeflächen – diskret & zuverlässig.</p>
+    </div>
+  </div>
+
+  <div class="service-card">
+    <img src="angebotserstellung.png" alt="Angebotserstellung">
+    <div>
+      <h3>Kostenlose Besichtigung & Angebotserstellung</h3>
+      <p>Wir kommen kostenlos vorbei und erstellen ein faires Festpreisangebot.</p>
+    </div>
+  </div>
+
+</section>
+
+<!-- FAQ -->
+<section id="faq">
+  <h2>Häufig gestellte Fragen (FAQ)</h2>
+
+  <div class="faq-container">
+
+    <div class="faq-item">
+      <div class="faq-question">
+        Wie läuft eine Haushaltsauflösung ab?
+        <span class="faq-arrow">➤</span>
+      </div>
+      <div class="faq-answer">
+        Wir kommen zur kostenlosen Besichtigung vorbei, erstellen ein faires Festpreisangebot und führen die Räumung termingerecht, diskret und besenrein durch.
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-question">
+        Was kostet eine Entrümpelung?
+        <span class="faq-arrow">➤</span>
+      </div>
+      <div class="faq-answer">
+        Die Kosten hängen von Größe, Aufwand und Zugänglichkeit ab. Nutzen Sie einfach unser Kontaktformular – dort erhalten Sie unverbindlich einen genauen Preis.
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-question">
+        Wie schnell können Sie kommen?
+        <span class="faq-arrow">➤</span>
+      </div>
+      <div class="faq-answer">
+        In der Regel innerhalb von 24–48 Stunden zur Besichtigung. Notfälle sind oft noch schneller möglich.
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-question">
+        Muss ich während der Räumung anwesend sein?
+        <span class="faq-arrow">➤</span>
+      </div>
+      <div class="faq-answer">
+        Nein. Wenn alles vorher besprochen ist, erledigen wir die komplette Räumung selbstständig.
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-question">
+        Kann ich die Kosten steuerlich absetzen?
+        <span class="faq-arrow">➤</span>
+      </div>
+      <div class="faq-answer">
+        Für Selbständige können Kosten für eine Haushalts‑ oder Betriebsauflösung als betriebliche Ausgabe absetzbar sein, wenn die Räumung beruflich bedingt ist.  
+        Privatpersonen können bestimmte Leistungen als haushaltsnahe Dienstleistungen geltend machen.  
+        Bitte klären Sie dies kurz mit Ihrem Steuerberater.
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-question">
+        Welche Modelle bieten Sie bei wertvollen Gegenständen an?
+        <span class="faq-arrow">➤</span>
+      </div>
+      <div class="faq-answer">
+        Wir bieten zwei faire Modelle an:<br><br>
+        <strong>1. Wertanrechnung:</strong> Wertvolle Gegenstände reduzieren den Gesamtpreis.<br><br>
+        <strong>2. Ankauf / Verkauf:</strong> Wir kaufen Wertsachen direkt an oder unterstützen beim Weiterverkauf.
+      </div>
+    </div>
+
   </div>
 </section>
 
@@ -259,9 +360,6 @@
   <a href="https://wa.me/491775237637" class="whatsapp-button" target="_blank">
     WhatsApp
   </a>
-  <div class="whatsapp-bubble">
-    Jetzt per WhatsApp schreiben!
-  </div>
 </div>
 
 <!-- Footer -->
@@ -272,6 +370,14 @@
     <a href="datenschutz.html">Datenschutz</a>
   </p>
 </footer>
+
+<script>
+  document.querySelectorAll('.faq-question').forEach(item => {
+    item.addEventListener('click', () => {
+      item.parentElement.classList.toggle('active');
+    });
+  });
+</script>
 
 </body>
 </html>
