@@ -66,11 +66,6 @@
       padding: 60px 20px 80px;
     }
 
-    .logo {
-      width: 200px;
-      margin-bottom: 20px;
-    }
-
     h1 {
       font-size: 42px;
       margin: 0 0 10px;
@@ -138,56 +133,6 @@
       color: #4B5563;
     }
 
-    /* Kontaktformular */
-    .contact-form {
-      display: flex;
-      flex-direction: column;
-      gap: 15px;
-      background: #FFFFFF;
-      padding: 25px;
-      border-radius: 16px;
-      box-shadow: 0 6px 18px rgba(0,0,0,0.06);
-    }
-
-    .contact-form label {
-      font-weight: bold;
-      color: #111827;
-    }
-
-    .contact-form input,
-    .contact-form textarea {
-      padding: 12px;
-      border: 1px solid #D1D5DB;
-      border-radius: 10px;
-      font-size: 16px;
-      width: 100%;
-      box-sizing: border-box;
-    }
-
-    .contact-form input:focus,
-    .contact-form textarea:focus {
-      border-color: #F97316;
-      outline: none;
-      box-shadow: 0 0 0 3px rgba(249,115,22,0.2);
-    }
-
-    .form-button {
-      background: #F97316;
-      color: white;
-      padding: 14px;
-      border: none;
-      border-radius: 10px;
-      font-size: 18px;
-      font-weight: bold;
-      cursor: pointer;
-      transition: 0.2s ease;
-    }
-
-    .form-button:hover {
-      background: #EA580C;
-      transform: translateY(-2px);
-    }
-
     /* WhatsApp Button + Textblase */
     .whatsapp-wrapper {
       position: fixed;
@@ -236,44 +181,6 @@
       100% { opacity: 0; transform: translateY(5px); }
     }
 
-    /* Responsive Design */
-    @media (max-width: 768px) {
-
-      .nav-links {
-        display: none;
-      }
-
-      header {
-        padding: 40px 20px 60px;
-      }
-
-      h1 {
-        font-size: 32px;
-      }
-
-      .logo {
-        width: 150px;
-      }
-
-      section {
-        padding: 40px 15px;
-      }
-
-      .service {
-        padding: 18px;
-      }
-
-      .whatsapp-wrapper {
-        bottom: 15px;
-        right: 15px;
-      }
-
-      .whatsapp-bubble {
-        font-size: 12px;
-        padding: 10px 14px;
-      }
-    }
-
     /* Footer */
     footer {
       background: #111827;
@@ -281,6 +188,27 @@
       text-align: center;
       padding: 25px;
       font-size: 14px;
+    }
+
+    footer a {
+      color: #F97316;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    footer a:hover {
+      text-decoration: underline;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .nav-links { display: none; }
+      header { padding: 40px 20px 60px; }
+      h1 { font-size: 32px; }
+      section { padding: 40px 15px; }
+      .service { padding: 18px; }
+      .whatsapp-wrapper { bottom: 15px; right: 15px; }
+      .whatsapp-bubble { font-size: 12px; padding: 10px 14px; }
     }
   </style>
 </head>
@@ -292,24 +220,24 @@
   <div class="nav-container">
     <img src="logo.JPG" class="nav-logo" alt="Logo">
     <ul class="nav-links">
-      <li><a href="#top">Home</a></li>
-      <li><a href="#leistungen">Leistungen</a></li>
-      <li><a href="#kontakt">Kontakt</a></li>
-      <li><a href="#impressum">Impressum</a></li>
-      <li><a href="#datenschutz">Datenschutz</a></li>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="leistungen.html">Leistungen</a></li>
+      <li><a href="kontakt.html">Kontakt</a></li>
+      <li><a href="impressum.html">Impressum</a></li>
+      <li><a href="datenschutz.html">Datenschutz</a></li>
     </ul>
   </div>
 </nav>
 
 <!-- Header -->
-<header id="top">
+<header>
   <h1>Flink Haushaltsauflösung</h1>
   <p>Professionelle Haushaltsauflösungen und Entrümpelungen</p>
-  <a class="button" href="#kontakt">Jetzt Kontakt aufnehmen</a>
+  <a class="button" href="kontakt.html">Jetzt Kontakt aufnehmen</a>
 </header>
 
 <!-- Leistungen -->
-<section id="leistungen">
+<section>
   <h2>Unsere Leistungen</h2>
 
   <div class="service">
@@ -328,120 +256,23 @@
   </div>
 </section>
 
-<!-- Kontaktformular -->
-<section id="kontakt">
-  <h2>Kontakt</h2>
-
-  <form class="contact-form" action="https://formspree.io/f/mnnqzjvd" method="POST">
-    <label>Name</label>
-    <input type="text" name="name" required>
-
-    <label>Telefon</label>
-    <input type="phone" name="phone" required>
-    
-    <label>E-Mail</label>
-    <input type="email" name="email" required>
-
-    <label>Nachricht</label>
-    <textarea name="message" rows="5" required></textarea>
-
-    <button type="submit" class="form-button">Nachricht senden</button>
-  </form>
-</section>
-
-<!-- Impressum -->
-<section id="impressum">
-  <h2>Impressum</h2>
-
-  <p><strong>Flink Haushaltsauflösung</strong><br>
-  O. Sandi<br>
-  Weidenweg 3<br>
-  64658 Fürth</p>
-
-  <p><strong>Kontakt</strong><br>
-  Telefon: 0177 5237 637<br>
-  E-Mail: info@flinkhaushaltsaufloesung.de</p>
-
-  <p><strong>Umsatzsteuer-ID</strong><br>
-  Kleinunternehmer gemäß § 19 UStG – keine Ausweisung der Umsatzsteuer.</p>
-
-  <p><strong>Verantwortlich nach § 55 Abs. 2 RStV:</strong><br>
-  O. Sandi</p>
-</section>
-
-<!-- Datenschutz -->
-<section id="datenschutz">
-  <h2>Datenschutzerklärung</h2>
-
-<p>Der Schutz Ihrer persönlichen Daten ist uns wichtig. In dieser Datenschutzerklärung informieren wir Sie darüber, welche Daten wir erheben, wie wir sie verwenden und welche Rechte Sie haben.</p>
-
-<h2>1. Verantwortlicher</h2>
-<p>
-Flink Haushaltsauflösung<br>
-O. Sandi<br>
-Weidenweg 3<br>
-64658 Fürth<br>
-E-Mail: info@flinkhaushaltsaufloesung.de
-</p>
-
-<h2>2. Erhebung und Speicherung personenbezogener Daten</h2>
-<p>Beim Besuch unserer Website werden keine personenbezogenen Daten automatisch gespeichert.  
-Wir verwenden keine Cookies, keine Tracking‑Tools und keine Analyse‑Dienste.</p>
-
-<h2>3. Kontaktaufnahme</h2>
-<p>Wenn Sie uns per Telefon, E‑Mail oder über das Kontaktformular kontaktieren, verarbeiten wir die von Ihnen übermittelten Daten (z. B. Name, Telefonnummer, E‑Mail, Nachricht) ausschließlich zur Bearbeitung Ihrer Anfrage.</p>
-
-<h2>4. Kontaktformular (Formspree)</h2>
-<p>Für das Kontaktformular nutzen wir den Dienst „Formspree“.  
-Die eingegebenen Daten werden über Formspree an uns übermittelt und dort kurzzeitig verarbeitet.</p>
-
-<p><strong>Anbieter:</strong><br>
-Formspree, Inc.<br>
-https://formspree.io/legal/privacy</p>
-
-<h2>5. Server‑Logfiles</h2>
-<p>Der Hosting‑Anbieter unserer Website erhebt automatisch technische Daten (Server‑Logfiles), darunter:</p>
-<ul>
-  <li>IP‑Adresse</li>
-  <li>Datum und Uhrzeit des Zugriffs</li>
-  <li>Browsertyp und Browserversion</li>
-  <li>Verwendetes Betriebssystem</li>
-</ul>
-
-<h2>6. Weitergabe von Daten</h2>
-<p>Eine Übermittlung Ihrer Daten an Dritte findet nicht statt, es sei denn, wir sind gesetzlich dazu verpflichtet.</p>
-
-<h2>7. Ihre Rechte</h2>
-<p>Sie haben jederzeit folgende Rechte:</p>
-<ul>
-  <li>Auskunft</li>
-  <li>Löschung</li>
-  <li>Berichtigung</li>
-  <li>Einschränkung der Verarbeitung</li>
-  <li>Widerspruch</li>
-  <li>Datenübertragbarkeit</li>
-</ul>
-
-<h2>8. Sicherheit</h2>
-<p>Wir treffen technische und organisatorische Maßnahmen, um Ihre Daten vor Verlust, Missbrauch oder unbefugtem Zugriff zu schützen.</p>
-
-<h2>9. Aktualität</h2>
-<p>Diese Datenschutzerklärung kann bei Bedarf aktualisiert werden.</p>
-</section>
-
 <!-- WhatsApp Button -->
 <div class="whatsapp-wrapper">
   <a href="https://wa.me/491775237637" class="whatsapp-button" target="_blank">
     WhatsApp
   </a>
   <div class="whatsapp-bubble">
-    Jetzt per WhatsApp schreiben !
+    Jetzt per WhatsApp schreiben!
   </div>
 </div>
 
 <!-- Footer -->
 <footer>
-  © 2026 Flink Haushaltsauflösung
+  <p>© 2026 Flink Haushaltsauflösung</p>
+  <p>
+    <a href="impressum.html">Impressum</a> |
+    <a href="datenschutz.html">Datenschutz</a>
+  </p>
 </footer>
 
 </body>
